@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,78 +17,78 @@
             <div class="social-login">
                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign
                         in with Facebook</span> </button>
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign
+                        <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign
                         in with Google+</span> </button>
-            </div>
+                    </div>
             <p style="text-align:center"> OR </p>
             <div class="input-group">
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
-                    autofocus="">
+                autofocus="">
             </div>
 
             <div class="input-group">
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
             </div>
-
+            
             <div class="input-group">
-                <button class="btn btn-md btn-rounded btn-block form-control submit" type="submit"><i
+                <button onclick="login()" class="btn btn-md btn-rounded btn-block form-control submit" type="submit"><i
                         class="fas fa-sign-in-alt"></i> Sign in</button>
-            </div>
+                    </div>
 
-            <a href="#" id="forgot_pswd">Forgot password?</a>
+                    <a href="#" id="forgot_pswd">Forgot password?</a>
             <hr>
             <!-- <p>Don't have an account!</p>  -->
             <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
                 Sign up New Account</button>
             </div>
 
-        <form action="#" class="form-reset">
-            <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required=""
+            <form action="#" class="form-reset">
+                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required=""
                 autofocus="">
-            <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
-            <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
-        </form>
-
-        <div class="form-signup abc">
-            <!-- <form action="#" class="form-signup"> -->
-
+                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+            </form>
+            
+            <div class="form-signup abc">
+                <!-- <form action="#" class="form-signup"> -->
+                    
                 <div class="social-login">
                     <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up
                     with Facebook</span> </button>
-        </div>
+                </div>
         <div class="social-login">
             <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up
-                    with Google+</span> </button>
+                with Google+</span> </button>
         </div>
         
         <p style="text-align:center">OR</p>
-
-        <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
-        <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
-        <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
-        <input type="password" id="user-repeatpass" class="form-control" placeholder="Confirm Password" required
-            autofocus="">
+        
+        <input type="text" id="firstName" class="form-control" placeholder="First name" required="" autofocus="">
+        <input type="text" id="lastName" class="form-control" placeholder="Last Name" required autofocus="">
+        <input type="email" id="emailSignup" class="form-control" placeholder="Email Address" required autofocus="">
+        <input type="password" id="pwd" class="form-control" placeholder="Password" required
+        autofocus="">
             
         <div class="input-group">
-            <button class="btn btn-md btn-block submit" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+            <button class="btn btn-md btn-block submit" onclick="signUp()" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
         </div>
 
         <a href="#" id="cancel_signup"><i class="fa fa-angle-left"></i> Back</a>
     </div>
-        <br>
-
+    <br>
+    
     <!-- </form> -->
-    </div>
+</div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
 
-<script>
+     <script>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -101,11 +99,13 @@
     messagingSenderId: "814583575396",
     appId: "1:814583575396:web:34e29a65a9761ab0e54071",
     measurementId: "G-9Z5XVJYY6V"
-  };
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
 </body>
 
